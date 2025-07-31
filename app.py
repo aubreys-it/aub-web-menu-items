@@ -35,7 +35,7 @@ msal_app = ConfidentialClientApplication(
 
 # Example Model: Edit this for your table's columns
 class SampleTable(db.Model):
-    __tablename__ = "SampleTable"  # Change to your table name
+    __tablename__ = "dbo.locations"  # Change to your table name
     id = db.Column(db.Integer, primary_key=True)
     col1 = db.Column(db.String(100))
     col2 = db.Column(db.String(100))
