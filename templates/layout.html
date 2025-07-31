@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Table Editor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Table Editor App</h1>
+    {% if session.get('user') %}
+      <div class="userbox">
+        Logged in as: {{ session['user']['name'] }}
+        <a href="{{ url_for('logout') }}">Logout</a>
+      </div>
+    {% endif %}
+  </header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

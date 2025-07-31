@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Column 1</th>
+      <th>Column 2</th>
+      <th>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in records %}
+    <tr>
+      <form method="POST" action="{{ url_for('edit_row', row_id=row.id) }}">
+        <td>{{ row.id }}</td>
+        <td><input type="text" name="col1" value="{{ row.col1 }}"></td>
+        <td><input type="text" name="col2" value="{{ row.col2 }}"></td>
+        <td><button type="submit">Update</button></td>
+      </form>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
